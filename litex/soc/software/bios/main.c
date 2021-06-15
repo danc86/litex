@@ -47,6 +47,7 @@
 #include <liblitesdcard/sdcard.h>
 #include <liblitesata/sata.h>
 
+#if 0
 static void boot_sequence(void)
 {
 #ifdef CSR_UART_BASE
@@ -73,6 +74,7 @@ static void boot_sequence(void)
 #endif
 	printf("No boot medium found\n");
 }
+#endif
 
 int main(int i, char **c)
 {
@@ -105,7 +107,7 @@ int main(int i, char **c)
 #ifdef CONFIG_WITH_BUILD_TIME
 	printf(" BIOS built on "__DATE__" "__TIME__"\n");
 #endif
-	crcbios();
+	//crcbios();
 	printf("\n");
 	printf(" Migen git sha1: "MIGEN_GIT_SHA1"\n");
 	printf(" LiteX git sha1: "LITEX_GIT_SHA1"\n");
@@ -173,11 +175,13 @@ int main(int i, char **c)
 	video_framebuffer_dma_enable_write(1);
 #endif
 
+#if 0
 	if(sdr_ok) {
 		printf("--============== \e[1mBoot\e[0m ==================--\n");
 		boot_sequence();
 		printf("\n");
 	}
+#endif
 
 	printf("--============= \e[1mConsole\e[0m ================--\n");
 #if !defined(TERM_MINI) && !defined(TERM_NO_HIST)

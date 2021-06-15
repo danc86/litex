@@ -7,19 +7,19 @@ CFLAGS += -DTFTP_SERVER_PORT=$(TFTP_SERVER_PORT)
 endif
 
 OBJECTS = isr.o			\
-	  boot-helper.o		\
-	  boot.o			\
-	  helpers.o			\
-	  cmd_bios.o		\
-	  cmd_mem.o			\
-	  cmd_boot.o		\
-	  cmd_i2c.o			\
-	  cmd_spiflash.o	\
-	  cmd_litedram.o	\
-	  cmd_liteeth.o		\
-	  cmd_litesdcard.o  \
-	  cmd_litesata.o    \
+	  helpers.o                     \
+	  cmd_mem.o                     \
 	  main.o
+	  #boot-helper.o         \
+	  #boot.o                        \
+	  #cmd_bios.o            \
+	  #cmd_boot.o            \
+	  #cmd_i2c.o                     \
+	  #cmd_spiflash.o        \
+	  #cmd_litedram.o        \
+	  #cmd_liteeth.o         \
+	  #cmd_litesdcard.o  \
+	  #cmd_litesata.o    \
 
 ifneq "$(or $(TERM_NO_COMPLETE),$(TERM_MINI))" ""
 CFLAGS += -DTERM_NO_COMPLETE
