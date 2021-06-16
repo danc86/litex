@@ -21,6 +21,9 @@ OBJECTS = isr.o			\
 	  #cmd_litesdcard.o  \
 	  #cmd_litesata.o    \
 
+TERM_MINI = 1
+TERM_NO_HIST = 1
+
 ifneq "$(or $(TERM_NO_COMPLETE),$(TERM_MINI))" ""
 CFLAGS += -DTERM_NO_COMPLETE
 else

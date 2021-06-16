@@ -51,6 +51,7 @@ void dump_bytes(unsigned int *ptr, int count, unsigned long addr)
 	printf("\n");
 }
 
+#if 0
 void crcbios(void)
 {
 	unsigned long offset_bios;
@@ -75,6 +76,7 @@ void crcbios(void)
 		printf(" The system will continue, but expect problems.\n");
 	}
 }
+#endif
 
 int get_param(char *buf, char **cmd, char **params)
 {
